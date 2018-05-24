@@ -1,0 +1,27 @@
+{
+  "name": "hangular",
+  "version": "1.0.0",
+  "description": "Hangman game in AngularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silvester56/hangular.git"
+  },
+  "keywords": [
+    "hangman",
+    "angularjs"
+  ],
+  "author": "Silvester56",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Silvester56/hangular/issues"
+  },
+  "homepage": "https://github.com/Silvester56/hangular#readme",
+  "dependencies": {
+    "angular": "^1.7.0",
+    "npm": "^6.0.1"
+  }
+}
