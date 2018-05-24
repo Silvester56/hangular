@@ -1,0 +1,32 @@
+.centered {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.letter {
+    background-color: #4C82AF;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.letter:hover {
+    background-color: #62A8E3;
+}
+
+.letter:disabled {
+    background-color: #34546F;
+}
+
+.tocenter {
+	margin: 0 auto;
+	display: table;
+}
+
+p, h2 {
+	text-align: center;
+}

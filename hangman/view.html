@@ -1,3 +1,4 @@
+<h2>Hangular</h2>
 <div ng-show="mc.state == 0">
   <p>Please enter your name :</p>
   <div class="tocenter">
@@ -15,7 +16,7 @@
   <br>
   <div class="tocenter">
     <span ng-repeat="l in mc.letters track by $index">
-      <button class="letter" ng-disabled="l.disabled" ng-click="l.disabled=true;mc.clickLetter(l.letter)">
+      <button class="letter" ng-disabled="l.disabled" ng-click="mc.clickLetter(l)">
         {{l.letter}}
       </button>
     </span>

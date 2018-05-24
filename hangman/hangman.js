@@ -34,30 +34,33 @@ angular.module("app").controller("mainController", function() {
 		}
 	}
 
-	this.clickLetter = (letter) => {
+	this.clickLetter = (l) => {
 		let notfound = true;
 		let won = true;
 
-		for (let i = 0; i < this.word.length; i++) {
-			if (this.word[i].letter == letter) {
-				notfound = false;
-				this.word[i].found = true;
-			}
-			if (this.word[i].found == false) {
-				won = false;
-			}
-		}
-		if (won) {
-			this.state = 2;
-		}
-		if (notfound) {
-			this.lifes = this.lifes - 1;
-			if (this.lifes == 0) {
-				this.state = 3;
-				for (let i = 0; i < this.word.length; i++) {
-					this.word[i].found = true;
-				}
-			}
-		}
+    if (this.state == 1) {
+      l.disabled = true;
+      for (let i = 0; i < this.word.length; i++) {
+        if (this.word[i].letter == l.letter) {
+          notfound = false;
+          this.word[i].found = true;
+        }
+        if (this.word[i].found == false) {
+          won = false;
+        }
+      }
+      if (won) {
+        this.state = 2;
+      }
+      if (notfound) {
+        this.lifes = this.lifes - 1;
+        if (this.lifes == 0) {
+          this.state = 3;
+          for (let i = 0; i < this.word.length; i++) {
+            this.word[i].found = true;
+          }
+        }
+      }
+    }
 	}
 });
