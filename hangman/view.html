@@ -2,15 +2,15 @@
 <div ng-show="mc.state == 0">
   <p>Please enter your name :</p>
   <div class="tocenter">
-    <input type="text" ng-model="mc.name">
+    <input type="text" ng-model="mc.name" ng-keyup="$event.keyCode == 13 ? mc.start() : null">
     <button ng-click="mc.start()">Start</button>
   </div>
 </div>
 <div ng-show="mc.state >= 1">
   <p>Lifes : {{mc.lifes}}</p>
   <div class="tocenter">
-    <span ng-repeat="w in mc.word track by $index">
-      {{w.found ? w.letter : '_'}}
+    <span ng-class="{'lost': mc.state == 3 && w.found == false}" ng-repeat="w in mc.word track by $index">
+      {{w.found || mc.state == 3 ? w.letter : '_'}}
     </span>
   </div>
   <br>
