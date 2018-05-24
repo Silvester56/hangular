@@ -1,0 +1,34 @@
+<div ng-show="mc.state == 0">
+  <p>Please enter your name :</p>
+  <div class="tocenter">
+    <input type="text" ng-model="mc.name">
+    <button ng-click="mc.start()">Start</button>
+  </div>
+</div>
+<div ng-show="mc.state >= 1">
+  <p>Lifes : {{mc.lifes}}</p>
+  <div class="tocenter">
+    <span ng-repeat="w in mc.word track by $index">
+      {{w.found ? w.letter : '_'}}
+    </span>
+  </div>
+  <br>
+  <div class="tocenter">
+    <span ng-repeat="l in mc.letters track by $index">
+      <button class="letter" ng-disabled="l.disabled" ng-click="l.disabled=true;mc.clickLetter(l.letter)">
+        {{l.letter}}
+      </button>
+    </span>
+  </div>
+</div>
+<div ng-show="mc.state == 2">
+  <p>Congratulation <strong>{{mc.name}}</strong>, you won :-)</p>
+</div>
+<div ng-show="mc.state == 3">
+  <p>Sorry <strong>{{mc.name}}</strong>, you lost :-(</p>
+</div>
+<div>
+  <div class="tocenter">
+    <button ng-show="mc.state >= 2" ng-click="mc.reset()">Reset</button>
+  </div>
+</div>

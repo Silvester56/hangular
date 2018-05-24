@@ -1,7 +1,3 @@
-angular.module("App",['main']);
+'use strict';
 
-angular.module("main",[]);
-
- angular.module("main").controller("mainController",function($scope){
-    // Controller body
-});
+angular.module("app", []);
