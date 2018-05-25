@@ -1,25 +1,25 @@
 <h2>Hangular</h2>
-<div ng-show="mc.state == 0">
+<div ng-show="$ctrl.state == 0">
   <p>Please enter your name :</p>
   <div class="tocenter">
-    <input type="text" ng-model="mc.name" ng-keyup="$event.keyCode == 13 ? mc.start() : null">
-    <button ng-click="mc.start()">Start</button>
+    <input type="text" ng-model="$ctrl.name" ng-keyup="$event.keyCode == 13 ? $ctrl.start() : null">
+    <button ng-click="$ctrl.start()">Start</button>
   </div>
 </div>
-<div ng-show="mc.state >= 1">
-  <p>Lifes : {{mc.lifes}}</p>
+<div ng-show="$ctrl.state >= 1">
+  <p>Lifes : {{$ctrl.lifes}}</p>
   <div class="tocenter">
-    <span ng-class="{'lost': mc.state == 3 && w.found == false}" ng-repeat="w in mc.word track by $index">
-      {{w.found || mc.state == 3 ? w.letter : '_'}}
+    <span ng-class="{'lost': $ctrl.state == 3 && w.found == false}" ng-repeat="w in $ctrl.word track by $index">
+      {{w.found || $ctrl.state == 3 ? w.letter : '_'}}
     </span>
   </div>
   <br>
   <div class="tocenter">
-    <span ng-repeat="l in mc.letters track by $index">
-      <button class="letter" ng-disabled="l.disabled" ng-click="mc.clickLetter(l)">
+    <span ng-repeat="l in $ctrl.letters track by $index">
+      <button class="letter" ng-disabled="l.disabled" ng-click="$ctrl.clickLetter(l)">
         {{l.letter}}
       </button>
     </span>
   </div>
 </div>
-<end-game name="mc.name" state="mc.state" callback="mc.reset()"></end-game>
+<end-game name="$ctrl.name" state="$ctrl.state" callback="$ctrl.reset()"></end-game>
