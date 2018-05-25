@@ -22,14 +22,4 @@
     </span>
   </div>
 </div>
-<div ng-show="mc.state == 2">
-  <p>Congratulation <strong>{{mc.name}}</strong>, you won :-)</p>
-</div>
-<div ng-show="mc.state == 3">
-  <p>Sorry <strong>{{mc.name}}</strong>, you lost :-(</p>
-</div>
-<div>
-  <div class="tocenter">
-    <button ng-show="mc.state >= 2" ng-click="mc.reset()">Reset</button>
-  </div>
-</div>
+<end-game name="mc.name" state="mc.state" callback="mc.reset()"></end-game>

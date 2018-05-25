@@ -1,0 +1,11 @@
+<div ng-show="$ctrl.state == 2">
+  <p>Congratulation <strong>{{$ctrl.name}}</strong>, you won :-)</p>
+</div>
+<div ng-show="$ctrl.state == 3">
+  <p>Sorry <strong>{{$ctrl.name}}</strong>, you lost :-(</p>
+</div>
+<div>
+  <div class="tocenter">
+    <button ng-show="$ctrl.state >= 2" ng-click="$ctrl.callback()">Reset</button>
+  </div>
+</div>
