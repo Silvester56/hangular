@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("app").controller("mainController", function(WORDLIST) {
-  this.state = 0;
+	this.state = 0;
 	this.lifes = 5;
 	this.word = [];
 	this.letters = [];
@@ -36,26 +36,26 @@ angular.module("app").controller("mainController", function(WORDLIST) {
 		let notfound = true;
 		let won = true;
 
-    if (this.state == 1) {
-      l.disabled = true;
-      for (let i = 0; i < this.word.length; i++) {
-        if (this.word[i].letter == l.letter) {
-          notfound = false;
-          this.word[i].found = true;
-        }
-        if (this.word[i].found == false) {
-          won = false;
-        }
-      }
-      if (won) {
-        this.state = 2;
-      }
-      if (notfound) {
-        this.lifes = this.lifes - 1;
-        if (this.lifes == 0) {
-          this.state = 3;
-        }
-      }
-    }
+		if (this.state == 1) {
+			l.disabled = true;
+			for (let i = 0; i < this.word.length; i++) {
+				if (this.word[i].letter == l.letter) {
+					notfound = false;
+					this.word[i].found = true;
+				}
+				if (this.word[i].found == false) {
+					won = false;
+				}
+			}
+			if (won) {
+				this.state = 2;
+			}
+			if (notfound) {
+				this.lifes = this.lifes - 1;
+				if (this.lifes == 0) {
+					this.state = 3;
+				}
+			}
+		}
 	}
 });
