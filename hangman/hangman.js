@@ -2,9 +2,6 @@
 
 angular.module('app').component('hangMan', {
 	templateUrl: 'hangman/view.html',
-	bindings: {
-
- 	},
 	controller: function HangManController(WORDLIST) {
 		this.state = 0;
 		this.lifes = 5;

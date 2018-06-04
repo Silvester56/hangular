@@ -6,8 +6,5 @@ angular.module('app').component('endGame', {
     name: '<',
 	 state: '<',
 	 callback: '&'
- 	},
-	controller: function EndGameController() {
-
-	}
+ 	}
 });
